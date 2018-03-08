@@ -1,8 +1,8 @@
 {
-  "name": "sax-template",
-  "version": "1.0.0",
+  "name": "saxt",
+  "version": "0.0.1",
   "description": "A server-side template engine based on sax-js",
-  "main": "index.js",
+  "main": "lib/saxt.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,7 +12,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/heineiuo/sax-template/issues"
   },
@@ -22,5 +22,8 @@
   },
   "devDependencies": {
     "mustache": "^2.3.0"
-  }
+  },
+  "files":[
+    "lib"
+  ]
 }
