@@ -20,6 +20,26 @@ The `attr` can be static value or wrapped with `{}`, then it will bind view prop
 
 If attr is `children`, the attrValue will be passed to the children element.
 
+The `saxt()` will return a readable stream, like: 
+
+```jsx
+const saxt = require('saxt')
+const view = { foo: "bar" }
+const stream = saxt(`<div children={foo}></div>`, view, { /* some options */ })
+stream.on('data', (data) => {
+  console.log(data)
+  // do stuff like `res.write(data)`
+})
+
+stream.on('end', () => {
+  console.log(end)
+  // do stuff like `res.end()`
+})
+```
+
+
+## Example
+
 ```jsx
 const saxt = require('saxt')
 const view = {
