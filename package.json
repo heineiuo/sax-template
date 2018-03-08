@@ -1,6 +1,6 @@
 {
   "name": "saxt",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A server-side template engine based on sax-js",
   "main": "lib/saxt.js",
   "scripts": {
