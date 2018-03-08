@@ -10,9 +10,29 @@ const view = {
 }
 
 
+const justCopy = (cname) => new Promise(resolve => {
+  console.time(cname)
 
-const runSaxt = () => new Promise(resolve => {
-  console.time('saxt')
+  const template = fs.createReadStream(__dirname + '/template2.html')
+
+  const stream = template
+
+  let result = ''
+  stream.on('data', (data) => {
+    result += data
+  })
+
+  stream.on('end', () => {
+    fs.writeFileSync(__dirname + '/template2-copy.html', result, 'utf8')
+    console.timeEnd(cname)
+    resolve()
+  })
+})
+
+
+
+const runSaxt = (cname) => new Promise(resolve => {
+  console.time(cname)
 
   // const template = fs.readFileSync('./template2.html', 'utf8')
   const template = fs.createReadStream(__dirname + '/template2.html')
@@ -25,23 +45,24 @@ const runSaxt = () => new Promise(resolve => {
   })
 
   stream.on('end', () => {
-    console.timeEnd('saxt')
     fs.writeFileSync(__dirname + '/template2-saxt.html', result, 'utf8')
+    console.timeEnd(cname)
     resolve()
   })
 })
 
-const runMustache = () => {
-  console.time('mustache')
+const runMustache = (cname) => {
+  console.time(cname)
   const msttemplate = fs.readFileSync(__dirname + '/template2.mst', 'utf8')
-  
   const result = Mustache.render(msttemplate, view)
-  console.timeEnd('mustache')
   fs.writeFileSync(__dirname + '/template2-mst.html', result, 'utf8')
+  console.timeEnd(cname)
 }
 
 
 process.nextTick(async () => {
-  await runSaxt()
-  await runMustache()
+  await justCopy('justcopy')
+  await runSaxt('saxt')
+  await runMustache('mustache')
+  await runMustache('mustache twice')
 })
