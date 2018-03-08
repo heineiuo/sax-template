@@ -1,6 +1,6 @@
 {
   "name": "saxt",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A server-side template engine based on sax-js",
   "main": "lib/saxt.js",
   "scripts": {
@@ -18,12 +18,13 @@
   },
   "homepage": "https://github.com/heineiuo/sax-template#readme",
   "dependencies": {
+    "lodash.get": "^4.4.2",
     "sax": "^1.2.4"
   },
   "devDependencies": {
     "mustache": "^2.3.0"
   },
-  "files":[
+  "files": [
     "lib"
   ]
 }
