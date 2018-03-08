@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/heineiuo/sax-template#readme",
   "dependencies": {
-    "mustache": "^2.3.0",
     "sax": "^1.2.4"
+  },
+  "devDependencies": {
+    "mustache": "^2.3.0"
   }
 }
