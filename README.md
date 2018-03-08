@@ -25,15 +25,17 @@ The `saxt()` will return a readable stream, like:
 ```jsx
 const saxt = require('saxt')
 const view = { foo: "bar" }
-const stream = saxt(`<div children={foo}></div>`, view, { /* some options */ })
+const stream = saxt(`<t-div children={foo}></t-div>`, view, { /* some options */ })
+
+let result = ''
 stream.on('data', (data) => {
-  console.log(data)
-  // do stuff like `res.write(data)`
+  result += data
+  // or do stuff like `res.write(data)`
 })
 
 stream.on('end', () => {
-  console.log(end)
-  // do stuff like `res.end()`
+  assert(result === `<div>bar</div>`)
+  // or do stuff like `res.end()`
 })
 ```
 
