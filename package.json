@@ -1,0 +1,24 @@
+{
+  "name": "sax-template",
+  "version": "1.0.0",
+  "description": "A server-side template engine based on sax-js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heineiuo/sax-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heineiuo/sax-template/issues"
+  },
+  "homepage": "https://github.com/heineiuo/sax-template#readme",
+  "dependencies": {
+    "mustache": "^2.3.0",
+    "sax": "^1.2.4"
+  }
+}
