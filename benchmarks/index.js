@@ -37,7 +37,9 @@ const runSaxt = (cname) => new Promise(resolve => {
   // const template = fs.readFileSync('./template2.html', 'utf8')
   const template = fs.createReadStream(__dirname + '/template2.html')
 
-  const stream = saxt(template, view)
+  const stream = saxt(template, view, {
+    BUF_SIZE: 50
+  })
 
   let result = ''
   stream.on('data', (data) => {
