@@ -17,6 +17,8 @@ saxt has a very simple syntax.
 
 All `tagName` is html tag. The `attr` can be static value or wrapped with `{}`, then it will bind view props, and one special attr is `children`. If attr is `children`, the attrValue will be passed to the children element.
 
+**Important**: If the bind value is not a string type, it will be stringify by `JSON.stringify` and encoded by `encodeURIComponent`
+
 The `saxt()` will return a readable stream, like: 
 
 ```jsx

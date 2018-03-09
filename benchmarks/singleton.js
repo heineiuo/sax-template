@@ -15,7 +15,8 @@ const view = {
 }
 
 
-const template = `<html>
+const template = `<!DOCTYPE html>
+<html>
   <head>
     <meta charset="utf8" />
     <meta />
