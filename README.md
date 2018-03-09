@@ -13,19 +13,16 @@ npm i saxt
 
 ## Usage
 
-saxt use `<t-tag attr="{attrValue}" />` syntax. 
+saxt has a very simple syntax. 
 
-The `tag` can be any html tag like `html`, `meta`, `div` etc. 
-The `attr` can be static value or wrapped with `{}`, then it will bind view props
-
-If attr is `children`, the attrValue will be passed to the children element.
+All `tagName` is html tag. The `attr` can be static value or wrapped with `{}`, then it will bind view props, and one special attr is `children`. If attr is `children`, the attrValue will be passed to the children element.
 
 The `saxt()` will return a readable stream, like: 
 
 ```jsx
 const saxt = require('saxt')
 const view = { foo: "bar" }
-const stream = saxt(`<t-div children={foo}></t-div>`, view, { /* some options */ })
+const stream = saxt(`<div children={foo}></div>`, view, { /* some options */ })
 
 let result = ''
 stream.on('data', (data) => {
@@ -54,7 +51,7 @@ const view = {
 
 // 1. children example
 saxt(`
-  <t-div id="post" children={post} />
+  <div id="post" children={post} />
 `, view)
 
 // result >>>
@@ -68,7 +65,7 @@ saxt(`
 
 // 2. attr example
 saxt(`
-  <t-meta charset={charset} />
+  <meta charset={charset} />
 `, view)
 
 // result >>>>

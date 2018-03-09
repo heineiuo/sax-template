@@ -3,6 +3,7 @@ const Mustache = require('mustache')
 const saxt = require('../lib/saxt')
 
 const view = {
+  charset: "utf8",
   title: "wow",
   post: `
   <div><p>hello world</p></div>
