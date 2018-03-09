@@ -10,6 +10,8 @@
 </head>
 <body>
 
+  <script>var config={foo: 'bar'}</script>
+
   <div>{{post}}</div>
   
   <div id="body-container">
